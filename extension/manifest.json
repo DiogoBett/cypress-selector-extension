@@ -1,0 +1,26 @@
+{
+    "manifest_version": 3,
+    "name": "Cypress Selector Generator",
+    "version": "1.0",
+    "description": "Select an element on the page and generate a Cypress selector.",
+    "permissions": [
+        "contextMenus",
+        "scripting",
+        "clipboardWrite",
+        "activeTab"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": {
+            "16": "icons/icon16.png",
+            "48": "icons/icon48.png",
+            "128": "icons/icon128.png"
+        }
+    },
+    "host_permissions": [
+        "<all_urls>"
+    ]
+}
