@@ -10,7 +10,9 @@ document.addEventListener("click", function handleClick(event) {
     });
 
     document.removeEventListener("click", handleClick);
-});
+},
+    { once: true }
+);
 
 function generateCypressSelector(element) {
     if (element.id) {
