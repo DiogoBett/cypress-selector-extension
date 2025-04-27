@@ -9,6 +9,7 @@ document.addEventListener("click", function handleClick(event) {
         showToast(`Cypress Selector: ${selector}`);
     });
 
+    removeCursorStyle();
     document.removeEventListener("click", handleClick);
 },
     { once: true }
@@ -63,3 +64,13 @@ function showToast(message) {
         }, 300);
     }, 1000);
 }
+
+function addCursorStyle() {
+    document.body.style.cursor = "crosshair";
+}
+
+function removeCursorStyle() {
+    document.body.style.cursor = "";
+}
+
+addCursorStyle();
