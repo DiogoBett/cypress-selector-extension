@@ -12,9 +12,9 @@
         "default_title": "Cypress Selector Generator",
         "default_popup": "popup.html",
         "default_icon": {
-            "16": "icons/icon16.png",
-            "48": "icons/icon48.png",
-            "128": "icons/icon128.png"
+            "16": "icons/cy_insp1.png",
+            "48": "icons/cy_insp2.png",
+            "128": "icons/cy_insp3.png"
         }
     },
     "host_permissions": [
