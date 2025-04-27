@@ -4,15 +4,12 @@
     "version": "1.0",
     "description": "Select an element on the page and generate a Cypress selector.",
     "permissions": [
-        "contextMenus",
         "scripting",
         "clipboardWrite",
         "activeTab"
     ],
-    "background": {
-        "service_worker": "background.js"
-    },
     "action": {
+        "default_title": "Cypress Selector Generator",
         "default_popup": "popup.html",
         "default_icon": {
             "16": "icons/icon16.png",

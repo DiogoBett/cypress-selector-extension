@@ -15,9 +15,17 @@ document.addEventListener("click", function handleClick(event) {
 function generateCypressSelector(element) {
     if (element.id) {
         return `#${element.id}`;
+    } else if (element.name) {
+        return `[name="${element.name}"]`;
     } else if (element.className) {
         const classList = element.className.trim().split(/\s+/).join(".");
         return `.${classList}`;
+    } else if (element.getAttribute("data-cy")) {
+        return `[data-cy="${element.getAttribute("data-cy")}"]`;
+    } else if (element.getAttribute("data-test")) {
+        return `[data-test="${element.getAttribute("data-test")}"]`;
+    } else if (element.getAttribute("data-testid")) {
+        return `[data-testid="${element.getAttribute("data-testid")}"]`;
     } else {
         return element.tagName.toLowerCase();
     }
