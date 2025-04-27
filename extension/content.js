@@ -20,7 +20,7 @@ function generateCypressSelector(element) {
         return `#${element.id}`;
     } else if (element.name) {
         return `[name="${element.name}"]`;
-    } else if (element.className) {
+    } else if (typeof element.className === "string" && element.className.trim()) {
         const classList = element.className.trim().split(/\s+/).join(".");
         return `.${classList}`;
     } else if (element.getAttribute("data-cy")) {
