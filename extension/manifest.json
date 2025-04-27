@@ -4,6 +4,7 @@
     "version": "1.0",
     "description": "Select an element on the page and generate a Cypress selector.",
     "permissions": [
+        "debugger",
         "scripting",
         "clipboardWrite",
         "activeTab"
