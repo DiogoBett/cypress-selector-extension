@@ -41,28 +41,31 @@ function showToast(message) {
     toast.style.bottom = "20px";
     toast.style.right = "20px";
     toast.style.padding = "10px 20px";
-    toast.style.backgroundColor = "#333";
-    toast.style.color = "#fff";
-    toast.style.borderRadius = "5px";
-    toast.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.2)";
     toast.style.zIndex = "9999";
-    toast.style.fontFamily = "Arial, sans-serif";
+    toast.style.borderRadius = "5px";
+    toast.style.backgroundColor = "#00a86b";
+    toast.style.color = "#d1d1d1";
+    toast.style.fontFamily = "'Roboto', sans-serif";
     toast.style.fontSize = "14px";
+    toast.style.boxShadow = "0 2px 5px rgba(0, 0, 0, 0.2)";
     toast.style.opacity = "0";
-    toast.style.transition = "opacity 0.3s ease";
+    toast.style.transition = "opacity 0.3s ease, transform 0.3s ease";
+    toast.style.transform = "translateY(20px)";
 
     document.body.appendChild(toast);
 
     setTimeout(() => {
         toast.style.opacity = "1";
+        toast.style.transform = "translateY(0)";
     }, 0);
 
     setTimeout(() => {
         toast.style.opacity = "0";
+        toast.style.transform = "translateY(20px)";
         setTimeout(() => {
             toast.remove();
         }, 300);
-    }, 1000);
+    }, 3000);
 }
 
 function addCursorStyle() {
