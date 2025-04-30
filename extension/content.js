@@ -22,15 +22,21 @@ function generateCypressSelector(element) {
         return `[data-test="${element.getAttribute("data-test")}"]`;
     } else if (element.getAttribute("data-testid")) {
         return `[data-testid="${element.getAttribute("data-testid")}"]`;
-    } else if (["button", "a", "span"].includes(element.tagName.toLowerCase()) && element.textContent.trim()) {
-        return `cy.contains("${element.textContent.trim()}")`;
-    } else if (element.name) {
-        return `[name="${element.name}"]`;
     } else if (element.id) {
         return `#${element.id}`;
+    } else if (element.name) {
+        return `[name="${element.name}"]`;
+    } else if (element.tagName && element.getAttribute("type")) {
+        const tagName = element.tagName.toLowerCase();
+        const typeValue = element.getAttribute("type");
+        if (tagName && typeValue) {
+            return `${tagName}[type="${typeValue}"]`;
+        }
     } else if (typeof element.className === "string" && element.className.trim()) {
         const classList = element.className.trim().split(/\s+/).join(".");
         return `.${classList}`;
+    } else if (["button", "a", "span"].includes(element.tagName.toLowerCase()) && element.textContent.trim()) {
+        return `cy.contains("${element.textContent.trim()}")`;
     } else {
         return element.tagName.toLowerCase();
     }
