@@ -1,7 +1,7 @@
 {
     "manifest_version": 3,
     "name": "Cypress Selector Generator",
-    "version": "1.0",
+    "version": "1.0.1",
     "description": "Simplifies the process of creating selectors for Cypress tests, making it easier to write reliable tests.",
     "permissions": [
         "scripting",
